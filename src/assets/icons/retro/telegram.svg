@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Retro telegram/paper plane icon -->
+  <path d="M1 8 L15 2 L12 14 L8 10 L12 5 L6 9 L1 8 Z" fill="#E8E8E8" stroke="#000" stroke-width="1"/>
+  <path d="M8 10 L8 14 L10 11" fill="#C0C0C0" stroke="#000" stroke-width="0.5"/>
+</svg>

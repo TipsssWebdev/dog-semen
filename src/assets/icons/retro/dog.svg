@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Retro dog icon -->
+  <ellipse cx="8" cy="10" rx="5" ry="4" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
+  <circle cx="8" cy="6" r="4" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
+  <ellipse cx="4" cy="4" rx="2" ry="3" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
+  <ellipse cx="12" cy="4" rx="2" ry="3" fill="#C0C0C0" stroke="#000" stroke-width="1"/>
+  <circle cx="6" cy="5" r="1" fill="#000"/>
+  <circle cx="10" cy="5" r="1" fill="#000"/>
+  <ellipse cx="8" cy="7" rx="1.5" ry="1" fill="#404040"/>
+</svg>

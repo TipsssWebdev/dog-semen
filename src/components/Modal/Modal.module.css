@@ -31,6 +31,14 @@
   }
 }
 
+.retroIcon {
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+  margin-right: 6px;
+  image-rendering: pixelated;
+}
+
 .titleBar {
   background: linear-gradient(to bottom, #fff 0%, #c0c0c0 50%, #a0a0a0 100%);
   border-bottom: 2px solid #000;

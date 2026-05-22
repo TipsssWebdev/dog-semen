@@ -1,6 +1,22 @@
 import React, { useState } from 'react';
 import styles from './Modal.module.css';
 
+// Import retro icons
+import dogIcon from '../../assets/icons/retro/dog.svg';
+import noteIcon from '../../assets/icons/retro/note.svg';
+import targetIcon from '../../assets/icons/retro/target.svg';
+import trophyIcon from '../../assets/icons/retro/trophy.svg';
+import cameraIcon from '../../assets/icons/retro/camera.svg';
+import phoneIcon from '../../assets/icons/retro/phone.svg';
+import chatIcon from '../../assets/icons/retro/chat.svg';
+import telegramIcon from '../../assets/icons/retro/telegram.svg';
+import maxIcon from '../../assets/icons/retro/max.svg';
+import coinIcon from '../../assets/icons/retro/coin.svg';
+
+const Icon: React.FC<{ src: string; alt?: string }> = ({ src, alt = '' }) => (
+  <img src={src} alt={alt} className={styles.retroIcon} />
+);
+
 interface ModalProps {
   title: string;
   isOpen: boolean;
@@ -15,7 +31,7 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <div className={styles.titleBar}>
-          <div className={styles.closeButton} onClick={onClose}>×</div>
+          <div className={styles.closeButton} onClick={onClose}>x</div>
           <span className={styles.titleBarText}>{title}</span>
         </div>
         <div className={styles.content}>
@@ -29,39 +45,39 @@ export const Modal: React.FC<ModalProps> = ({ title, isOpen, onClose, children }
 // About Modal Content
 export const AboutContent: React.FC = () => (
   <div>
-    <h2>� О моей собаке</h2>
-    <p><strong>Кличка:</strong> Семён</p>
-    <p><strong>Порода:</strong> Миниатюрный пудель</p>
-    <p><strong>Возраст:</strong> 5 месяцев</p>
-    <p><strong>Окрас:</strong> Абрикосовый</p>
-    <p><strong>Вес:</strong> 3.5 кг</p>
-    <p><strong>Любимая еда:</strong> Индейка с рисом и кусочки яблока</p>
-    <p><strong>Характер:</strong> Умный, энергичный, немного хитрый</p>
-    <h2>📝 История Семёна</h2>
+    <h2><Icon src={dogIcon} /> O moej sobake</h2>
+    <p><strong>Klichka:</strong> Semen</p>
+    <p><strong>Poroda:</strong> Miniatyurnyj pudel</p>
+    <p><strong>Vozrast:</strong> 5 mesyacev</p>
+    <p><strong>Okras:</strong> Abrikosovyj</p>
+    <p><strong>Ves:</strong> 3.5 kg</p>
+    <p><strong>Lyubimaya eda:</strong> Indejka s risom i kusochki yabloka</p>
+    <p><strong>Harakter:</strong> Umnyj, energichnyj, nemnogo hitryj</p>
+    <h2><Icon src={noteIcon} /> Istoriya Semena</h2>
     <p>
-      Семён появился в нашей семье в январе 2026 года совсем крохотным щенком. 
-      Его назвали в честь прадедушки — говорят, у них одинаково хитрый взгляд.
+      Semen poyavilsya v nashej seme v yanvare 2026 goda sovsem krohotnym shchenkom. 
+      Ego nazvali v chest pradedushki - govoryat, u nih odinakovo hitryj vzglyad.
     </p>
     <p>
-      Несмотря на юный возраст, Семён уже успел завоевать сердца всех соседей 
-      и стать звездой двора. Каждая прогулка превращается в мини-фотосессию!
+      Nesmotrya na yunyj vozrast, Semen uzhe uspel zavoevat serdca vseh sosedej 
+      i stat zvezdoj dvora. Kazhdaya progulka prevrashchaetsya v mini-fotosessiyu!
     </p>
     <p>
-      Обожает играть с мячиком, гоняться за голубями и воровать носки. 
-      Уже освоил команды: сидеть, ко мне, и "где твой мячик?".
+      Obozhaet igrat s myachikom, gonyatsya za golubyami i vorovat noski. 
+      Uzhe osvoil komandy: sidet, ko mne, i "gde tvoj myachik?".
     </p>
-    <h2>🎯 Любимые занятия</h2>
+    <h2><Icon src={targetIcon} /> Lyubimye zanyatiya</h2>
     <ul>
-      <li>Прятаться под одеялом</li>
-      <li>Грызть игрушки-пищалки</li>
-      <li>Встречать хозяина с работы</li>
-      <li>Спать на коленях</li>
+      <li>Pryatatsya pod odeyalom</li>
+      <li>Gryzt igrushki-pishchalki</li>
+      <li>Vstrechat hozyaina s raboty</li>
+      <li>Spat na kolenyah</li>
     </ul>
-    <h2>🏆 Достижения</h2>
+    <h2><Icon src={trophyIcon} /> Dostizheniya</h2>
     <ul>
-      <li>Самый пушистый щенок на районе</li>
-      <li>Научился приносить тапочки (иногда оба)</li>
-      <li>Ни разу не погрыз провода!</li>
+      <li>Samyj pushistyj shchenok na rajone</li>
+      <li>Nauchilsya prinosit tapochki (inogda oba)</li>
+      <li>Ni razu ne pogryz provoda!</li>
     </ul>
   </div>
 );
@@ -69,15 +85,15 @@ export const AboutContent: React.FC = () => (
 // Photo Modal Content
 export const PhotoContent: React.FC = () => (
   <div>
-    <h2>📸 Фотогалерея</h2>
+    <h2><Icon src={cameraIcon} /> Fotogalereya</h2>
     <div className={styles.photoGrid}>
       {[1, 2, 3, 4, 5, 6].map((num) => (
         <div key={num} className={styles.photoPlaceholder}>
           <svg viewBox="0 0 24 24">
             <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
           </svg>
-          <span>Фото {num}</span>
-          <span>скоро будет</span>
+          <span>Foto {num}</span>
+          <span>skoro budet</span>
         </div>
       ))}
     </div>
@@ -87,13 +103,13 @@ export const PhotoContent: React.FC = () => (
 // Phone Numbers Modal Content
 export const NumberContent: React.FC = () => (
   <div>
-    <h2>📞 Контактные номера</h2>
-    <p>Свяжитесь с нами по вопросам о собаке:</p>
+    <h2><Icon src={phoneIcon} /> Kontaktnye nomera</h2>
+    <p>Svyazhites s nami po voprosam o sobake:</p>
     <a href="tel:89126128355" className={styles.phoneNumber}>
-      📱 8 (912) 612-83-55
+      <Icon src={phoneIcon} /> 8 (912) 612-83-55
     </a>
     <a href="tel:89331732911" className={styles.phoneNumber}>
-      📱 8 (933) 173-29-11
+      <Icon src={phoneIcon} /> 8 (933) 173-29-11
     </a>
   </div>
 );
@@ -101,19 +117,19 @@ export const NumberContent: React.FC = () => (
 // Social Media Modal Content
 export const SocialContent: React.FC = () => (
   <div>
-    <h2>💬 Социальные сети</h2>
+    <h2><Icon src={chatIcon} /> Socialnye seti</h2>
     <a href="https://t.me/" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>
-      <span className={styles.socialIcon}>✈️</span>
+      <span className={styles.socialIcon}><Icon src={telegramIcon} /></span>
       <div>
         <strong>Telegram</strong>
-        <p style={{ fontSize: '10px', margin: 0 }}>Подписывайтесь на канал</p>
+        <p style={{ fontSize: '10px', margin: 0 }}>Podpisyvajtes na kanal</p>
       </div>
     </a>
     <a href="#" className={styles.socialLink}>
-      <span className={styles.socialIcon}>💬</span>
+      <span className={styles.socialIcon}><Icon src={maxIcon} /></span>
       <div>
         <strong>MAX Messenger</strong>
-        <p style={{ fontSize: '10px', margin: 0 }}>Пишите в MAX</p>
+        <p style={{ fontSize: '10px', margin: 0 }}>Pishite v MAX</p>
       </div>
     </a>
   </div>
@@ -131,7 +147,7 @@ export const CoinFlipContent: React.FC = () => {
     setResult(null);
     
     setTimeout(() => {
-      const newResult = Math.random() < 0.5 ? 'ОРЁЛ' : 'РЕШКА';
+      const newResult = Math.random() < 0.5 ? 'OREL' : 'RESHKA';
       setResult(newResult);
       setIsFlipping(false);
     }, 600);
@@ -139,7 +155,7 @@ export const CoinFlipContent: React.FC = () => {
 
   return (
     <div className={styles.coinflipContainer}>
-      <h2>🪙 Подбрось монетку</h2>
+      <h2><Icon src={coinIcon} /> Podbros monetku</h2>
       <div 
         className={`${styles.coin} ${isFlipping ? styles.flipping : ''}`}
         onClick={flipCoin}
@@ -147,11 +163,11 @@ export const CoinFlipContent: React.FC = () => {
         {result || '?'}
       </div>
       <button className={styles.flipButton} onClick={flipCoin} disabled={isFlipping}>
-        {isFlipping ? 'Крутится...' : 'Подбросить'}
+        {isFlipping ? 'Krutitsya...' : 'Podbrosit'}
       </button>
       {result && (
         <div className={styles.result}>
-          Выпало: {result}
+          Vypalo: {result}
         </div>
       )}
     </div>

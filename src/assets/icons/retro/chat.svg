@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+  <!-- Retro chat/message icon -->
+  <path d="M2 2 L14 2 L14 10 L8 10 L4 14 L4 10 L2 10 Z" fill="#E8E8E8" stroke="#000" stroke-width="1"/>
+  <circle cx="5" cy="6" r="1" fill="#404040"/>
+  <circle cx="8" cy="6" r="1" fill="#404040"/>
+  <circle cx="11" cy="6" r="1" fill="#404040"/>
+</svg>
