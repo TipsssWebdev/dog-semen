@@ -95,9 +95,6 @@ export const NumberContent: React.FC = () => (
     <a href="tel:89331732911" className={styles.phoneNumber}>
       📱 8 (933) 173-29-11
     </a>
-    <p style={{ marginTop: '16px', fontSize: '10px', color: '#666' }}>
-      Звоните в любое время с 9:00 до 21:00
-    </p>
   </div>
 );
 
