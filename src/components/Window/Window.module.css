@@ -1,0 +1,123 @@
+.window {
+  background-color: #c0c0c0;
+  border: 2px solid #000;
+  border-radius: 8px;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5);
+  min-width: 600px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .window {
+    min-width: calc(100vw - 20px);
+    max-width: calc(100vw - 20px);
+    max-height: none;
+    border-radius: 8px;
+    margin: 10px;
+  }
+}
+
+.titleBar {
+  background: linear-gradient(to bottom, #fff 0%, #c0c0c0 50%, #a0a0a0 100%);
+  border-bottom: 2px solid #000;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: default;
+  user-select: none;
+}
+
+.titleBarIcon {
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(135deg, #666 25%, #999 25%, #999 50%, #666 50%, #666 75%, #999 75%);
+  background-size: 4px 4px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+
+.titleBarText {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000;
+  font-family: 'Chicago', 'Geneva', monospace;
+}
+
+.menuBar {
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+  padding: 2px 8px;
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  font-family: 'Chicago', 'Geneva', monospace;
+}
+
+.menuItem {
+  padding: 2px 8px;
+  cursor: pointer;
+}
+
+.menuItem:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.content {
+  background-color: #808080;
+  padding: 20px;
+  min-height: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: flex-start;
+  align-content: flex-start;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 15px;
+    gap: 15px;
+    min-height: 250px;
+    justify-content: center;
+  }
+}
+
+.helperContainer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.helperImage {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.helperImage:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .helperContainer {
+    position: relative;
+    bottom: auto;
+    right: auto;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+
+  .helperImage {
+    width: 60px;
+  }
+}
